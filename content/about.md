@@ -8,10 +8,10 @@ Does it still work when things get real? That is the bar I care about."
 
 primaryText: Get in touch
 primaryHref: #contact
-secondary1Text: GitHub
-secondary1Href: https://github.com/parikshitiiitb
-secondary2Text: LinkedIn
-secondary2Href: https://www.linkedin.com/in/parikshitiiitb/
+label: GitHub
+href: https://github.com/parikshitiiitb
+label: LinkedIn
+href: https://www.linkedin.com/in/parikshitiiitb/
 initialsMain: P
 initialsAccent: S
-badgeText: Building systems that scale
+
