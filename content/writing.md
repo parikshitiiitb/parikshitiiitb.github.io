@@ -14,7 +14,7 @@ url: https://parikshitiiitb.medium.com
 icon: S
 iconStyle: background:rgba(255,103,25,.15);color:#FF6719;font-size:.85rem;
 name: Substack
-handle: The Production ML Dispatch
+handle: @parikshitiiitb
 desc: Biweekly newsletter. Real stories from building AI at scale - what breaks, why, and how to fix it before your users notice.
 cta: Subscribe
 url: https://parikshitiiitb.substack.com
