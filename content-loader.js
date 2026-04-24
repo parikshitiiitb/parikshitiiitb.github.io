@@ -175,14 +175,39 @@
         </div>
       </div>
       <div class="hero-right">
-        <div class="avatar-wrap">
-          <div class="avatar-ring"></div>
-          <div class="avatar-hex" id="avatar-hex">
-            <div class="avatar-initials">${escapeHtml(d.initialsMain)}<span>${escapeHtml(d.initialsAccent)}</span></div>
-          </div>
-          <div class="avatar-badge"><div class="badge-dot"></div>${escapeHtml(d.badgeText)}</div>
-        </div>
+  <div class="avatar-wrap">
+    <div class="avatar-ring"></div>
+
+    <div class="avatar-hex" id="avatar-hex">
+      <div class="avatar-initials">${escapeHtml(d.initialsMain)}<span>${escapeHtml(d.initialsAccent)}</span></div>
+    </div>
+
+    <div class="avatar-badge">
+      <div class="badge-dot"></div>
+      ${escapeHtml(d.badgeText)}
+    </div>
+
+    <div class="hero-metrics">
+      <div class="metric">
+        <div class="metric-num">8+</div>
+        <div class="metric-label">Years</div>
       </div>
+      <div class="metric">
+        <div class="metric-num">25+</div>
+        <div class="metric-label">Projects</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">Millions</div>
+        <div class="metric-label">Users</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">Enterprise</div>
+        <div class="metric-label">Scale</div>
+      </div>
+    </div>
+
+  </div>
+</div>
     `;
   }
 

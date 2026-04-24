@@ -1013,6 +1013,55 @@ footer {
   transition: color .2s;
 }
 .mobile-nav a:hover { color: var(--accent); }
+/* ── Hero Metrics Card ─────────────────────────── */
+.hero-metrics {
+  position: absolute;
+  bottom: -20px;
+  left: -60px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .75rem;
+
+  padding: 1rem;
+  width: 220px;
+
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric-num {
+  font-family: var(--font-disp);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #E8EAF2;
+}
+
+.metric-label {
+  font-size: .65rem;
+  color: rgba(232,234,242,.6);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* Mobile fix */
+@media (max-width: 900px) {
+  .hero-metrics {
+    position: static;
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>
@@ -1076,6 +1125,40 @@ footer {
     </div>
 
     <div class="hero-right">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+    
+        <div class="avatar-hex" id="avatar-hex">
+          <div class="avatar-initials">P<span>S</span></div>
+        </div>
+    
+        <div class="avatar-badge">
+          <div class="badge-dot"></div>
+          Building systems that scale
+        </div>
+    
+        <!-- NEW: Metrics Card -->
+        <div class="hero-metrics">
+          <div class="metric">
+            <div class="metric-num">8+</div>
+            <div class="metric-label">Years</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">25+</div>
+            <div class="metric-label">Projects</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">Millions</div>
+            <div class="metric-label">Users</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">Enterprise</div>
+            <div class="metric-label">Scale</div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
       <div class="avatar-wrap">
         <div class="avatar-ring"></div>
         <div class="avatar-hex">
