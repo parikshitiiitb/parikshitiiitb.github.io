@@ -14,4 +14,4 @@ secondary2Text: LinkedIn
 secondary2Href: https://www.linkedin.com/in/parikshitiiitb/
 initialsMain: P
 initialsAccent: S
-badgeText: Open to opportunities
+badgeText: Building systems that scale
