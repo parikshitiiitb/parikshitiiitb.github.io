@@ -1,5 +1,5 @@
-# Personal content files — managed locally, not tracked in repo
-content/
+# Avatar photo — keep private, not deployed
+content/avatar.*
 
 # Development notes — internal only
 Development_road.md
