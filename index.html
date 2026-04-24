@@ -264,14 +264,21 @@ h1.hero-name em {
 /* Avatar */
 .hero-right {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   position: relative; z-index: 1;
 }
 
 .avatar-wrap {
   position: relative;
-  width: 300px; height: 300px;
+  width: 340px;
+  min-height: 340px;
+}
+.hero-visual {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
 }
 .avatar-ring {
   position: absolute; inset: -16px;
@@ -398,7 +405,7 @@ h1.hero-name em {
 
 /* ── Shared section styles ──────────────────────── */
 section {
-  padding: 6rem var(--pad);
+  padding: 6.75rem var(--pad);
   max-width: var(--max);
   margin: 0 auto;
 }
@@ -450,7 +457,7 @@ section {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   max-width: none;
-  padding: 5rem var(--pad);
+  padding: 5.75rem var(--pad);
 }
 #impact > .inner {
   max-width: var(--max);
@@ -523,7 +530,6 @@ section {
   transition: border-color .3s;
 }
 .exp-card:hover { border-color: var(--accent); }
-.exp-left {}
 .exp-period {
   font-family: var(--font-mono);
   font-size: .72rem;
@@ -541,7 +547,6 @@ section {
   font-size: .78rem;
   color: var(--text-3);
 }
-.exp-right {}
 .exp-role {
   font-family: var(--font-disp);
   font-size: 1.35rem;
@@ -568,7 +573,7 @@ section {
 }
 
 /* ── Tech stack ─────────────────────────────────── */
-#stack { background: var(--ink-2); max-width: none; padding: 5rem var(--pad); }
+#stack { background: var(--ink-2); max-width: none; padding: 5.75rem var(--pad); }
 #stack > .inner { max-width: var(--max); margin: 0 auto; }
 
 .stack-grid {
@@ -606,6 +611,60 @@ section {
   transition: border-color .2s, color .2s;
 }
 .pill:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── What I Do ───────────────────────────────────── */
+.whatido-section {
+  padding: 5.75rem var(--pad);
+}
+.whatido-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.75rem;
+}
+.whatido-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: var(--radius-lg);
+  padding: 1.7rem;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+  box-shadow: 0 10px 30px rgba(15,17,23,.03);
+}
+.whatido-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(15,17,23,.06);
+}
+.whatido-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-bottom: .9rem;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.whatido-eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+}
+.whatido-title {
+  font-family: var(--font-disp);
+  font-size: 1.55rem;
+  line-height: 1.12;
+  color: var(--text);
+  margin-bottom: .8rem;
+}
+.whatido-desc {
+  font-size: .92rem;
+  color: var(--text-2);
+  line-height: 1.7;
+}
 
 /* ── Repos ──────────────────────────────────────── */
 .repos-grid {
@@ -683,7 +742,7 @@ section {
 .repo-link:hover { color: var(--accent); }
 
 /* ── Writing ────────────────────────────────────── */
-#writing { background: var(--ink-2); max-width: none; padding: 5rem var(--pad); }
+#writing { background: var(--ink-2); max-width: none; padding: 5.75rem var(--pad); }
 #writing > .inner { max-width: var(--max); margin: 0 auto; }
 
 .writing-platforms {
@@ -781,7 +840,7 @@ section {
 }
 
 /* ── Certifications ─────────────────────────────── */
-#certs { background: var(--ink-2); max-width: none; padding: 5rem var(--pad); }
+#certs { background: var(--ink-2); max-width: none; padding: 5.75rem var(--pad); }
 #certs > .inner { max-width: var(--max); margin: 0 auto; }
 
 .certs-list {
@@ -975,15 +1034,25 @@ footer {
 
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 900px) {
-  #hero { grid-template-columns: 1fr; padding-top: 8rem; text-align: center; }
+  #hero { grid-template-columns: 1fr; padding-top: 8rem; padding-bottom: 5.5rem; text-align: center; gap: 2.8rem; min-height: auto; }
   .hero-right { order: -1; }
   .hero-bio { margin: 0 auto 2rem; }
   .hero-actions { justify-content: center; }
-  .avatar-wrap { width: 220px; height: 220px; }
+  .avatar-wrap {
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero-visual { width: 220px; height: 220px; margin-left: 0; }
   .avatar-hex { width: 220px; height: 220px; }
   .avatar-initials { font-size: 4rem; }
   .avatar-ring { display: none; }
+  .avatar-badge { bottom: -8px; right: -8px; }
   .exp-card { grid-template-columns: 1fr; gap: 1rem; }
+  .whatido-grid { grid-template-columns: 1fr; }
   .writing-platforms { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
@@ -1016,15 +1085,15 @@ footer {
 /* ── Hero Metrics Card ─────────────────────────── */
 .hero-metrics {
   position: absolute;
-  bottom: -20px;
-  left: -60px;
+  bottom: 8px;
+  left: -46px;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: .75rem;
 
   padding: 1rem;
-  width: 220px;
+  width: 240px;
 
   background: rgba(255,255,255,.06);
   backdrop-filter: blur(14px);
@@ -1058,8 +1127,8 @@ footer {
 @media (max-width: 900px) {
   .hero-metrics {
     position: static;
-    margin-top: 1rem;
-    width: 100%;
+    margin-top: 0;
+    width: min(100%, 260px);
   }
 }
 </style>
@@ -1126,18 +1195,16 @@ footer {
 
     <div class="hero-right">
       <div class="avatar-wrap">
-        <div class="avatar-ring"></div>
-    
-        <div class="avatar-hex" id="avatar-hex">
-          <div class="avatar-initials">P<span>S</span></div>
+        <div class="hero-visual">
+          <div class="avatar-ring"></div>
+          <div class="avatar-hex" id="avatar-hex">
+            <div class="avatar-initials">P<span>S</span></div>
+          </div>
+          <div class="avatar-badge">
+            <div class="badge-dot"></div>
+            Open to opportunities
+          </div>
         </div>
-    
-        <div class="avatar-badge">
-          <div class="badge-dot"></div>
-          Building systems that scale
-        </div>
-    
-        <!-- NEW: Metrics Card -->
         <div class="hero-metrics">
           <div class="metric">
             <div class="metric-num">8+</div>
@@ -1156,19 +1223,31 @@ footer {
             <div class="metric-label">Scale</div>
           </div>
         </div>
-    
       </div>
     </div>
-      <div class="avatar-wrap">
-        <div class="avatar-ring"></div>
-        <div class="avatar-hex">
-          <div class="avatar-initials">P<span>S</span></div>
-        </div>
-        <div class="avatar-badge">
-          <div class="badge-dot"></div>
-          Open to opportunities
-        </div>
-      </div>
+  </div>
+</section>
+
+<!-- What I do -->
+<section class="whatido-section">
+  <div class="section-label">What I do</div>
+  <div class="section-title">Production AI systems, end to end</div>
+  <p class="section-sub">I work across retrieval, deployment, and agentic workflows to turn experimental AI into reliable products.</p>
+  <div class="whatido-grid">
+    <div class="whatido-card reveal">
+      <div class="whatido-eyebrow">Retrieval</div>
+      <div class="whatido-title">RAG &amp; LLM Systems</div>
+      <div class="whatido-desc">Build retrieval pipelines, LLM apps, hallucination checks, and production-ready AI workflows.</div>
+    </div>
+    <div class="whatido-card reveal">
+      <div class="whatido-eyebrow">Delivery</div>
+      <div class="whatido-title">MLOps &amp; Deployment</div>
+      <div class="whatido-desc">Design CI/CD, monitoring, drift detection, scalable APIs, and reliable model delivery.</div>
+    </div>
+    <div class="whatido-card reveal">
+      <div class="whatido-eyebrow">Automation</div>
+      <div class="whatido-title">Agentic AI Workflows</div>
+      <div class="whatido-desc">Build tool-calling agents, workflow automation, approval gates, and multi-step decision systems.</div>
     </div>
   </div>
 </section>
@@ -1713,8 +1792,8 @@ function initInteractions() {
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach((el) => observer.observe(el));
 
-  document.querySelectorAll('.impact-grid, .repos-grid, .oss-grid, .stack-grid').forEach((grid) => {
-    grid.querySelectorAll('.impact-card, .repo-card, .oss-card, .stack-cat').forEach((card, i) => {
+  document.querySelectorAll('.whatido-grid, .impact-grid, .repos-grid, .oss-grid, .stack-grid').forEach((grid) => {
+    grid.querySelectorAll('.whatido-card, .impact-card, .repo-card, .oss-card, .stack-cat').forEach((card, i) => {
       card.style.transitionDelay = `${i * 60}ms`;
     });
   });

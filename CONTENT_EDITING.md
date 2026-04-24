@@ -5,6 +5,7 @@ You can now update portfolio content in `content/*.md` files without editing `in
 ## File map
 
 - `content/about.md` - hero/about section
+- `content/what-i-do.md` - What I Do cards below hero
 - `content/impact.md` - impact cards
 - `content/experience.md` - work experience cards
 - `content/stack.md` - tech stack categories and pills

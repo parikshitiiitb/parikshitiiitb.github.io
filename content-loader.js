@@ -175,39 +175,37 @@
         </div>
       </div>
       <div class="hero-right">
-  <div class="avatar-wrap">
-    <div class="avatar-ring"></div>
-
-    <div class="avatar-hex" id="avatar-hex">
-      <div class="avatar-initials">${escapeHtml(d.initialsMain)}<span>${escapeHtml(d.initialsAccent)}</span></div>
-    </div>
-
-    <div class="avatar-badge">
-      <div class="badge-dot"></div>
-      ${escapeHtml(d.badgeText)}
-    </div>
-
-    <div class="hero-metrics">
-      <div class="metric">
-        <div class="metric-num">8+</div>
-        <div class="metric-label">Years</div>
+        <div class="avatar-wrap">
+          <div class="hero-visual">
+            <div class="avatar-ring"></div>
+            <div class="avatar-hex" id="avatar-hex">
+              <div class="avatar-initials">${escapeHtml(d.initialsMain)}<span>${escapeHtml(d.initialsAccent)}</span></div>
+            </div>
+            <div class="avatar-badge">
+              <div class="badge-dot"></div>
+              ${escapeHtml(d.badgeText)}
+            </div>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric">
+              <div class="metric-num">8+</div>
+              <div class="metric-label">Years</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">25+</div>
+              <div class="metric-label">Projects</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">Millions</div>
+              <div class="metric-label">Users</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">Enterprise</div>
+              <div class="metric-label">Scale</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="metric">
-        <div class="metric-num">25+</div>
-        <div class="metric-label">Projects</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">Millions</div>
-        <div class="metric-label">Users</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">Enterprise</div>
-        <div class="metric-label">Scale</div>
-      </div>
-    </div>
-
-  </div>
-</div>
     `;
   }
 
@@ -247,9 +245,10 @@
   }
 
   async function renderAll() {
-    const [about, impact, experience, stack, projects, writing, oss, certs, contact, links, footer] =
+    const [about, whatIDo, impact, experience, stack, projects, writing, oss, certs, contact, links, footer] =
       await Promise.all([
         readContent("./content/about.md"),
+        readContent("./content/what-i-do.md"),
         readContent("./content/impact.md"),
         readContent("./content/experience.md"),
         readContent("./content/stack.md"),
@@ -264,6 +263,15 @@
 
     renderAbout(about);
     applyAvatarPhoto();
+
+    applyTitle(".whatido-section", whatIDo.root);
+    renderCards(".whatido-section .whatido-grid", whatIDo, "whatido-card", (item) => `
+      <div class="whatido-card reveal">
+        <div class="whatido-eyebrow">${escapeHtml(item.eyebrow || "Capability")}</div>
+        <div class="whatido-title">${escapeHtml(item.title)}</div>
+        <div class="whatido-desc">${escapeHtml(item.desc)}</div>
+      </div>
+    `);
 
     applyTitle("#impact .inner", impact.root);
     renderCards("#impact .impact-grid", impact, "impact-card", (item) => `

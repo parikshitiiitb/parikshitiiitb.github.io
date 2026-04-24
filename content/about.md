@@ -4,7 +4,7 @@ lastName: Sharma
 title: Principal ML Engineer · Bangalore, India
 bio: "I build AI systems that are meant to survive outside demos. Not just run once and look good.
 
-Most of my work sits around Generative AI, large language models, and backend systems that actually have to handle load; messy inputs, weird edge cases, real users doing unpredictable things.
+Most of my work sits around Generative AI, large language models, and backend systems that actually have to handle load, messy inputs, weird edge cases, real users doing unpredictable things.
 
 To be honest, the interesting part is never the first version. It is what breaks after. Latency spikes, retrieval goes slightly off, outputs start sounding right but being wrong. That is where most of my time goes.
 
