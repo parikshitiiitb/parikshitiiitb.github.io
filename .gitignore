@@ -1,5 +1,6 @@
 # Avatar photo — keep private, not deployed
 content/avatar.*
+!content/avatar.png
 
 # Development notes — internal only
 Development_road.md
